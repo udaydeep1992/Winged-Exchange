@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <% include ../partials/head %>
+  <body>
+
+    <% include ../partials/header %>
+
+
+    <div class="container pt-2">
+      <div class='row'>
+        <div class="col-md-12">
+            <div class="card w-100">
+              <div class="card-body">
+                <center><h2 class="card-title">Wingedex Fees</h2></center>
+                <h3>Trading Commission</h3>
+                <p class="card-text">All trades have a 0.1% commission.</p>
+				<h3>We Work on Maker-Taker Model </h3>
+				 <p class="card-text">Wingedex employs the “maker-taker” model with the purpose of maximizing liquidity and narrowing the spread on cryptocurrency markets. With our system, “makers” are encouraged to keep adding liquidity to the market.
+
+The chief aim of maker-taker fees is to stimulate trading activity within an exchange by extending the incentive to post orders and facilitating trading.
+
+On Wingedex, "Takers" are charged with 0.1% fee from the trade. "Makers" are not charged with a fee. On the contrary, they receive a 0.01% rebate from the trade.
+
+In our maker-taker model, the "taker" is a trader who removes the liquidity from the book by placing an order that matches immediately with an existing order on the book. The taker pays the fee from the committed trade.
+
+The "maker" is a trader who provides liquidity to the order book by placing a limit order below the best ask price for the buy and above the best bid price for the sell..</p>
+                <hr>
+                <h3>Deposit Commission</h3>
+                <p class="card-text">All cryptocurrencies have a 0.0% commission.</p>
+                <hr>
+                <h3>Withdraw Commission</h3>
+                <p class="card-text">The commission is appointed by the coin blockchain. To ensure the withdrawal, we will freeze the minimum balance</p>
+                <div class="container">
+                    <div class='row'>
+                        <div class='col-md-6'>
+                            <table class='table w-30'>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Coin</th>
+                                        <th>Min. balance</th>
+                                    </tr>
+                                </thead>
+                                <tbody id='id_fees'>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <% include ../partials/footer %>
+    <script src='/js/fees.js'></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<div id="dark-image">
+<nav class="navbar navbar-expand-lg navbar-light static-top bg-light">
+    <div class="container" style="max-width: 90%;">
+        <a class="navbar-brand" href="/">
+            <img  height="30" border="0" align="center"  src="/Wingedex6.png"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/"><%-__('<img src="https://cdn.discordapp.com/attachments/578352393528279042/578370751183192076/Trade.png" alt="Smiley face" width="100" height="34" align="left">')%></a>
+            </li>
+            <!--<li class="nav-item active">
+              <a class="nav-link" target="_blank" href="https://crosex.wingedex.com"><%-__('Crosex Trading')%></a>
+            </li>-->
+            <li class="nav-item active">
+              <!--<a class="nav-link" target="_blank" href="#"><%-__('DICE')%></a>-->
+            </li>
+            <li class="nav-item active">
+              <!--<a class="nav-link" target="_blank" href="#"><%-__('Faucet')%></a>-->
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" target="_blank" href="https://bitcointalk.org/index.php?topic=5078744" target="blank"><%-__('<img src="https://cdn.discordapp.com/attachments/578352393528279042/578366538285973520/forum.png" alt="Smiley face" width="100" height="34" align="middle">')%></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/API"><img src="https://cdn.discordapp.com/attachments/578352393528279042/578368788295319566/api.png" alt="Smiley face" width="100" height="34" align="left"></a>
+            </li>
+            <li class="nav-item active">
+              <!--<a class="nav-link" href="https://goo.gl/forms/PRoNsO218lKp5e0K3" target="blank">Add coin</a>-->
+			   <a class="nav-link" href="/add_coin"><img src="https://cdn.discordapp.com/attachments/578352393528279042/578365209060573185/addcoin.png" alt="Smiley face" width="100" height="34" align="left"></a>
+            </li>
+			<li class="nav-item active">
+              <a class="nav-link" href="https://discord.gg/YyFqS8W" target="blank"><img src="https://cdn.discordapp.com/attachments/578352393528279042/578367622999965737/discord.png" alt="Smiley face" width="100" height="34" align="left"></a>
+            </li>
+			
+        </ul>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <% var key = ''; try{if (status.active) key = status.token || '';}catch(e){}%>
+            <% if (!key.length) {%><% include ../partials/nav_not_logged %><% }%>
+            <% if (key.length) {%><%  include ../partials/nav_logged %><% }%>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span ><%-__('Help')%></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/support"><%-__('Support')%></a>
+                  <a class="dropdown-item" href="/fees"><%-__('Fees')%></a>
+                </div>
+            </li>
+        </ul>
+        
+        <button type="button" id='id-button-lang-en' class="btn btn-outline-success btn-sm m-1">EN</button>
+        <button type="button" id='id-button-lang-ru' class="btn btn-outline-success btn-sm">RU</button>
+			<!--<label title="Night Mode" for="mode" class="switch">
+	  <input id="mode" type="checkbox">
+	  <span class="slider round"></span>
+	</label>
+    </div>-->
+	<!--<label title="Night Mode" for="mode" class="switch">
+	  <input id="mode" type="checkbox">
+	  <span class="slider round"></span>
+	</label>-->
+</nav>
+    <div id="loader" style="display:none;"></div>
+    <input id='id_lang' type='hidden' <% var value = 'value="en"'; try{if (lang) value = "value='"+lang+"'"}catch(e){} %> <%- value %>>
+
+    <% var message = ""; 
+        if (!share.tradeEnabled || !share.withdrawEnabled) {
+          message = 
+            '<div class="container pt-2">'+
+              '<div id="alert-fail" class="alert alert-danger alert-dismissible col-md-12" role="alert" >'+
+                '<div id="fail-message">Technical work is carried out. Please be patient. <b>Trading enabled</b>. Withdraw is temporarily disabled</div>'+
+                '<button id="close_fail" type="button" class="close"  aria-label="Close">'+
+                  '<span aria-hidden="true">&times;</span>'+
+                '</button>'+
+              '</div>'+
+            '</div>'
+        }
+    %>
+    <!--<div class="container pt-2">
+      <div id="alert-fail" class="alert alert-danger alert-dismissible col-md-12" role="alert" >
+        <div id="fail-message"><b>Crew (CREW)</b> will delisted. Please close your orders and withdraw CREW balances</div>
+        <button id="close_fail" type="button" class="close"  aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      </div>
+    </div>-->
+    <%- message %>

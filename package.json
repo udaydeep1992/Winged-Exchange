@@ -1,0 +1,20 @@
+{
+  "name": "Wingedex",
+  "version": "0.1.0",
+  "description": "Open Source Cryptocurrency Exchange",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3s3s/wingedex.git"
+  },
+  "dependencies": {
+    "cors": "latest",
+    "debug": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "forever-monitor": "^1.7.1",
+    "nodemon": "^1.18.9",
+    "sendmail": "latest",
+    "sqlite3": "latest",
+    "ws": "latest"
+  }
+}
